@@ -20,7 +20,7 @@ module Harvest
       def perform_get_objects(klass, path, options = {})
         results = perform_get(path, options)
 
-        results[:users].collect do |item|
+        results.values[0].collect do |item|
           klass.new(item, options, self)
         end
       end

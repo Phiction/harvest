@@ -1,4 +1,3 @@
-require 'harvest/error'
 require 'harvest/api/request'
 require 'harvest/api/utils'
 require 'harvest/user'
@@ -10,16 +9,15 @@ module Harvest
       include Harvest::API::Utils
       include Harvest::Utils
 
-      def me(options={})
-        perform_get_object(Harvest::User, '/users/me', options)
-      end
-
       def users(options={})
         perform_get_objects(Harvest::User, '/users', options)
       end
 
-      def user(id, options={})
-        perform_get_object(Harvest::User, "/users/#{id}", options)
+      def user(*args)
+        options = args.last.is_a?(::Hash) ? args.pop : {} # HACK: ?
+
+        path = args.length == 0 ? '/users/me' : "/users/#{args.first}"
+        perform_get_object(Harvest::User, path, options)
       end
 
       def user_create(options={})
@@ -32,6 +30,13 @@ module Harvest
 
       def user_delete(id, options={})
         perform_delete_object(Harvest::User, "/users/#{id}", options)
+      end
+
+      def user_project_assignments(*args)
+        options = args.last.is_a?(::Hash) ? args.pop : {} # HACK: ?
+
+        path = args.length == 0 ? '/users/me/project_assignments' : "/users/#{args.first}/project_assignments"
+        perform_get_objects(Harvest::ProjectAssignment, path, options)
       end
 
     end

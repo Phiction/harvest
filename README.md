@@ -9,12 +9,14 @@
   - [Configuration](#configuration)
   - [Usage](#usage)
     - [Users](#users)
-      - [Retrieve the currently authenticated user](#retrieve-the-currently-authenticated-user)
+      - [Current](#current)
       - [List](#list)
       - [Find](#find)
       - [Create](#create)
       - [Update](#update)
       - [Delete](#delete)
+      - [Current Project Assignments](#current-project-assignments)
+      - [Project Assignments](#project-assignments)
   - [TODOs](#todos)
   - [Contributing](#contributing)
   - [License](#license)
@@ -56,10 +58,10 @@ After configuring the harvest client, you can do the following things.
 
 Full parameter documnetation can be found at [https://help.getharvest.com/api-v2/users-api/users/users/](https://help.getharvest.com/api-v2/users-api/users/users/)
 
-#### Retrieve the currently authenticated user
+#### Current
 
 ```ruby
-harvest.me
+harvest.user
 
 ```
 
@@ -80,7 +82,7 @@ harvest.users(options)
 #### Find
 
 ```ruby
-harvest.user_create(user.id)
+harvest.user(user.id)
 
 ```
 
@@ -112,6 +114,25 @@ harvest.user_create(user.id, options)
 
 ```ruby
 harvest.user_delete(user.id)
+
+```
+
+#### Current Project Assignments
+
+```ruby
+harvest.user_project_assignments
+
+```
+
+#### Project Assignments
+
+```ruby
+options = {
+  page: 1,
+  per_page: 5
+}
+
+harvest.user_project_assignments(user.id, options)
 
 ```
 

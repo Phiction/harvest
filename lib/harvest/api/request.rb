@@ -91,7 +91,6 @@ module Harvest
     private
 
       def fail_or_return_parsed_body(code, body)
-        puts "\n\n#{body.inspect}\n\n\n"
         error = Harvest::Error::ERRORS[code.to_i]
         raise(error) if error
 
