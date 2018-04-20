@@ -5,31 +5,31 @@ module Harvest
     attr_reader :code
 
     # Raised when Harvest returns a 4xx HTTP status code
-    ClientError = Class.new(self)
+    ConnectionError = Class.new(self)
 
     # Raised when Harvest returns the HTTP status code 400
-    BadRequest = Class.new(ClientError)
+    BadRequest = Class.new(ConnectionError)
 
     # Raised when Harvest returns the HTTP status code 401
-    Unauthorized = Class.new(ClientError)
+    Unauthorized = Class.new(ConnectionError)
 
     # Raised when Harvest returns the HTTP status code 403
-    Forbidden = Class.new(ClientError)
+    Forbidden = Class.new(ConnectionError)
 
     # Raised when Harvest returns the HTTP status code 413
-    RequestEntityTooLarge = Class.new(ClientError)
+    RequestEntityTooLarge = Class.new(ConnectionError)
 
     # Raised when Harvest returns the HTTP status code 404
-    NotFound = Class.new(ClientError)
+    NotFound = Class.new(ConnectionError)
 
     # Raised when Harvest returns the HTTP status code 406
-    NotAcceptable = Class.new(ClientError)
+    NotAcceptable = Class.new(ConnectionError)
 
     # Raised when Harvest returns the HTTP status code 422
-    UnprocessableEntity = Class.new(ClientError)
+    UnprocessableEntity = Class.new(ConnectionError)
 
     # Raised when Harvest returns the HTTP status code 429
-    TooManyRequests = Class.new(ClientError)
+    TooManyRequests = Class.new(ConnectionError)
 
     # Raised when Harvest returns a 5xx HTTP status code
     ServerError = Class.new(self)

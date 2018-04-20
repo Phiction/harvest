@@ -10,15 +10,15 @@ module Harvest
     class Request
       include Harvest::Utils
       BASE_URL = 'https://api.harvestapp.com/v2'.freeze
-      attr_accessor :client, :headers, :options, :path, :rate_limit, :request_method, :uri
+      attr_accessor :connection, :headers, :options, :path, :rate_limit, :request_method, :uri
 
-      # @param client [Harvest::Client]
+      # @param connection [Harvest::connection]
       # @param request_method [String, Symbol]
       # @param path [String]
       # @param options [Hash]
       # @return [Harvest::API::Request]
-      def initialize(client, request_method, path, options = {})
-        @client = client
+      def initialize(connection, request_method, path, options = {})
+        @connection = connection
         @uri = URI.parse(path.start_with?('http') ? path : BASE_URL + path)
         @request_method = request_method
         @path = uri.path
@@ -47,8 +47,8 @@ module Harvest
         @uri.query = URI.encode_www_form(clean_options)
 
         request = Net::HTTP::Get.new(@uri)
-        request['Authorization'] = "Bearer #{@client.access_token}"
-        request['Harvest-Account-Id'] = @client.account_id
+        request['Authorization'] = "Bearer #{@connection.access_token}"
+        request['Harvest-Account-Id'] = @connection.account_id
 
         Net::HTTP.start(@uri.hostname, @uri.port, use_ssl: true) do |http|
           http.request(request)
@@ -58,8 +58,8 @@ module Harvest
       def perform_post # TODO: cleanup
         Net::HTTP.start(@uri.host, @uri.port, use_ssl: true) do |http|
           request = Net::HTTP::Post.new @uri
-          request['Authorization'] = "Bearer #{@client.access_token}"
-          request['Harvest-Account-Id'] = @client.account_id
+          request['Authorization'] = "Bearer #{@connection.access_token}"
+          request['Harvest-Account-Id'] = @connection.account_id
           request.set_form_data(clean_options)
 
           http.request request
@@ -69,8 +69,8 @@ module Harvest
       def perform_patch # TODO: cleanup
         Net::HTTP.start(@uri.host, @uri.port, use_ssl: true) do |http|
           request = Net::HTTP::Patch.new @uri
-          request['Authorization'] = "Bearer #{@client.access_token}"
-          request['Harvest-Account-Id'] = @client.account_id
+          request['Authorization'] = "Bearer #{@connection.access_token}"
+          request['Harvest-Account-Id'] = @connection.account_id
           request.set_form_data(clean_options)
 
           http.request request
@@ -80,8 +80,8 @@ module Harvest
       def perform_delete # TODO: cleanup
         Net::HTTP.start(@uri.host, @uri.port, use_ssl: true) do |http|
           request = Net::HTTP::Delete.new @uri
-          request['Authorization'] = "Bearer #{@client.access_token}"
-          request['Harvest-Account-Id'] = @client.account_id
+          request['Authorization'] = "Bearer #{@connection.access_token}"
+          request['Harvest-Account-Id'] = @connection.account_id
           request.set_form_data(clean_options)
 
           http.request request

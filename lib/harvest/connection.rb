@@ -4,17 +4,16 @@ require 'harvest/utils'
 require 'harvest/version'
 
 module Harvest
-  class Client
-    # include Harvest::Utils
+  class Connection
     include Harvest::API
 
     attr_accessor :access_token, :account_id
     attr_writer :user_agent
 
-    # Initializes a new Client object
+    # Initializes a new Connection object
     #
     # @param options [Hash]
-    # @return [Harvest::Api::Client]
+    # @return [Harvest::Connection]
     def initialize(options = {})
       options.each do |key, value|
         instance_variable_set("@#{key}", value)

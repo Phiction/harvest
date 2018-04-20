@@ -44,7 +44,7 @@ gem install harvest
 ## Configuration
 
 ```ruby
-harvest = Harvest::Client.new do |config|
+harvest = Harvest::Connection.new do |config|
   config.access_token = "YOUR_ACCESS_TOKEN"
   config.account_id   = "YOUR_ACCOUNT_ID"
 end
@@ -52,7 +52,7 @@ end
 
 ## Usage
 
-After configuring the harvest client, you can do the following things.
+After configuring the harvest connection, you can do the following things.
 
 ### Users
 

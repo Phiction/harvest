@@ -4,10 +4,10 @@ require 'harvest/utils'
 
 module Harvest
   class Base
-    attr_reader :client, :query_options
+    attr_reader :connection, :query_options
 
-    def initialize(obj_hash = {}, query_options = {}, client = nil)
-      @client = client
+    def initialize(obj_hash = {}, query_options = {}, connection = nil)
+      @connection = connection
       @query_options = query_options
     end
 

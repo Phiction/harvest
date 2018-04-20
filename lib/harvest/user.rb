@@ -6,7 +6,7 @@ module Harvest
           :has_access_to_all_future_projects, :is_contractor, :is_admin, :is_project_manager, :can_see_rates,
           :can_create_projects, :can_create_invoices, :is_active, :default_hourly_rate, :cost_rate, :roles, :avatar_url
 
-    def initialize(attributes={}, query_options={}, client=nil)
+    def initialize(attributes={}, query_options={}, connection=nil)
       @id = attributes[:id]
       @first_name = attributes[:first_name]
       @last_name = attributes[:last_name]

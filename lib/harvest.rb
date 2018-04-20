@@ -1,7 +1,7 @@
 require 'date'
 
 require 'harvest/base'
-require 'harvest/client'
+require 'harvest/connection'
 require 'harvest/error'
 require 'harvest/version'
 
