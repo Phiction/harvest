@@ -1,31 +1,30 @@
+# The Harvest Ruby Gem
+
+A Ruby interface to the Harvest API.
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
 
-- [The Harvest Ruby Gem](#the-harvest-ruby-gem)
-  - [Installation](#installation)
-    - [Gemfile](#gemfile)
-    - [Standalone](#standalone)
-  - [Configuration](#configuration)
-  - [Usage](#usage)
-    - [Users](#users)
-      - [Current](#current)
-      - [List](#list)
-      - [Find](#find)
-      - [Create](#create)
-      - [Update](#update)
-      - [Delete](#delete)
-      - [Current Project Assignments](#current-project-assignments)
-      - [Project Assignments](#project-assignments)
-  - [TODOs](#todos)
-  - [Contributing](#contributing)
-  - [License](#license)
+- [Installation](#installation)
+  - [Gemfile](#gemfile)
+  - [Standalone](#standalone)
+- [Configuration](#configuration)
+- [Usage](#usage)
+  - [Users](#users)
+    - [Current](#current)
+    - [List](#list)
+    - [Find](#find)
+    - [Create](#create)
+    - [Update](#update)
+    - [Delete](#delete)
+    - [Current Project Assignments](#current-project-assignments)
+    - [Project Assignments](#project-assignments)
+- [TODOs](#todos)
+- [Contributing](#contributing)
+- [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-# The Harvest Ruby Gem
-
-A Ruby interface to the Harvest API.
 
 ## Installation
 
