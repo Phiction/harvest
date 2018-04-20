@@ -1,13 +1,11 @@
 require 'harvest/api/request'
 require 'harvest/api/utils'
 require 'harvest/user'
-require 'harvest/utils'
 
 module Harvest
   module API
     module Users
       include Harvest::API::Utils
-      include Harvest::Utils
 
       def users(options={})
         perform_get_objects(Harvest::User, '/users', options)

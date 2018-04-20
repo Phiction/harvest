@@ -5,5 +5,6 @@ require 'harvest/connection'
 require 'harvest/error'
 require 'harvest/version'
 
-require 'harvest/user'
+require 'harvest/client'
 require 'harvest/project_assignment'
+require 'harvest/user'

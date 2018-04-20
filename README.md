@@ -20,7 +20,15 @@ A Ruby interface to the Harvest API.
     - [Delete](#delete)
     - [Current Project Assignments](#current-project-assignments)
     - [Project Assignments](#project-assignments)
+  - [Clients](#clients)
+    - [List](#list-1)
+    - [Find](#find-1)
+    - [Create](#create-1)
+    - [Update](#update-1)
+    - [Delete](#delete-1)
 - [TODOs](#todos)
+  - [models](#models)
+  - [misc](#misc)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -135,11 +143,84 @@ harvest.user_project_assignments(user.id, options)
 
 ```
 
+### Clients
+
+Full parameter documnetation can be found at [https://help.getharvest.com/api-v2/clients-api/clients/clients/](https://help.getharvest.com/api-v2/clients-api/clients/clients/)
+
+#### List
+
+```ruby
+options = {
+  is_active: true,
+  updated_since: Date.today.prev_month,
+  page: 1,
+  per_page: 5
+}
+
+harvest.clients(options)
+
+```
+
+#### Find
+
+```ruby
+harvest.client(client.id)
+
+```
+
+#### Create
+
+```ruby
+options = {
+  name: "Test Client", # REQUIRED
+}
+
+harvest.client_create(options)
+
+```
+
+#### Update
+
+```ruby
+options = {
+  name: "Test Client Updated"
+}
+
+harvest.client_update(client.id, options)
+
+```
+
+#### Delete
+
+```ruby
+harvest.client_delete(client.id)
+
+```
+
+
+
+
+
 ## TODOs
+
+### models
+
+- [ ] clients
+- [ ] invoices
+- [ ] estimates
+- [ ] expenses
+- [ ] tasks
+- [ ] timesheets
+- [ ] projects
+- [ ] roles
+
+### misc
 
 - [ ] all the things
 - [ ] clean up api/request
 - [ ] add tests
+- [ ] model relations
+- [ ] set attribute data types
 
 ## Contributing
 
