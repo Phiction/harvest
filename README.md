@@ -63,7 +63,9 @@ After configuring the harvest connection, you can do the following things.
 
 ### Users
 
-Full parameter documnetation can be found at [https://help.getharvest.com/api-v2/users-api/users/users/](https://help.getharvest.com/api-v2/users-api/users/users/)
+Full parameter documnetation can be found at
++ [https://help.getharvest.com/api-v2/users-api/users/users/](https://help.getharvest.com/api-v2/users-api/users/users/)
++ [https://help.getharvest.com/api-v2/users-api/users/project-assignments/](https://help.getharvest.com/api-v2/users-api/users/project-assignments/)
 
 #### Current
 
@@ -145,7 +147,9 @@ harvest.user_project_assignments(user.id, options)
 
 ### Clients
 
-Full parameter documnetation can be found at [https://help.getharvest.com/api-v2/clients-api/clients/clients/](https://help.getharvest.com/api-v2/clients-api/clients/clients/)
+Full parameter documnetation can be found at
++ [https://help.getharvest.com/api-v2/clients-api/clients/clients/](https://help.getharvest.com/api-v2/clients-api/clients/clients/)
++ [https://help.getharvest.com/api-v2/clients-api/clients/contacts/](https://help.getharvest.com/api-v2/clients-api/clients/contacts/)
 
 #### List
 
@@ -205,7 +209,7 @@ harvest.client_delete(client.id)
 
 ### models
 
-- [ ] clients
+- [ ] contacts
 - [ ] invoices
 - [ ] estimates
 - [ ] expenses
