@@ -82,6 +82,8 @@ harvest.user
 
 #### List
 
+<details><summary>Options</summary><p>
+
 ```ruby
 options = {
   is_active: true,
@@ -89,6 +91,11 @@ options = {
   page: 1,
   per_page: 5
 }
+```
+</p></details>
+
+
+```ruby
 
 harvest.users(options)
 
