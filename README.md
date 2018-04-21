@@ -92,7 +92,7 @@ options = {
   per_page: 5
 }
 ```
-</p></details>
+</p></details><br>
 
 
 ```ruby
