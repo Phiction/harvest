@@ -26,6 +26,12 @@ A Ruby interface to the Harvest API.
     - [Create](#create-1)
     - [Update](#update-1)
     - [Delete](#delete-1)
+  - [Contacts](#contacts)
+    - [List](#list-2)
+    - [Find](#find-2)
+    - [Create](#create-2)
+    - [Update](#update-2)
+    - [Delete](#delete-2)
 - [TODOs](#todos)
   - [models](#models)
   - [misc](#misc)
@@ -147,7 +153,7 @@ harvest.user_project_assignments(user.id, options)
 
 ### Clients
 
-Full parameter documnetation can be found at
+Full parameter documentation can be found at
 + [https://help.getharvest.com/api-v2/clients-api/clients/clients/](https://help.getharvest.com/api-v2/clients-api/clients/clients/)
 + [https://help.getharvest.com/api-v2/clients-api/clients/contacts/](https://help.getharvest.com/api-v2/clients-api/clients/contacts/)
 
@@ -201,6 +207,80 @@ harvest.client_delete(client.id)
 
 ```
 
+### Contacts
+
+Full parameter documentation can be found at
++ [https://help.getharvest.com/api-v2/clients-api/clients/contacts/](https://help.getharvest.com/api-v2/clients-api/clients/contacts/)
+
+#### List
+
+```ruby
+options = {
+  is_active: true,
+  updated_since: Date.today.prev_month,
+  page: 1,
+  per_page: 5
+}
+
+harvest.contacts(options)
+
+```
+
+#### Find
+
+```ruby
+harvest.contact(contact.id)
+
+```
+
+#### Create
+
+```ruby
+options = {
+  client_id: client.id, #	REQUIRED
+  first_name: "Test",	#	REQUIRED
+}
+
+harvest.contact_create(options)
+
+```
+
+#### Update
+
+```ruby
+options = {
+  first_name: "Test Updated"
+}
+
+harvest.contact_update(contact.id, options)
+
+```
+
+#### Delete
+
+```ruby
+harvest.contact_delete(contact.id)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -209,7 +289,6 @@ harvest.client_delete(client.id)
 
 ### models
 
-- [ ] contacts
 - [ ] invoices
 - [ ] estimates
 - [ ] expenses
