@@ -280,23 +280,33 @@ harvest.contact(contact.id)
 
 #### Create
 
+<details><summary>Options</summary><p>
+
 ```ruby
 options = {
-  client_id: client.id, #	REQUIRED
-  first_name: "Test",	#	REQUIRED
+  client_id: client.id, # REQUIRED - integer
+  first_name: "Test",	# REQUIRED - string
 }
+```
+</p></details><br>
 
+```ruby
 harvest.contact_create(options)
 
 ```
 
 #### Update
 
+<details><summary>Options</summary><p>
+
 ```ruby
 options = {
-  first_name: "Test Updated"
+  first_name: "Test Updated" # string
 }
+```
+</p></details><br>
 
+```ruby
 harvest.contact_update(contact.id, options)
 
 ```
