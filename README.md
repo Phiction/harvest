@@ -129,11 +129,16 @@ harvest.user_create(options)
 
 #### Update
 
+<details><summary>Options</summary><p>
+
 ```ruby
 options = {
-  last_name: "User-Updated"
+  last_name: "User-Updated" # string
 }
+```
+</p></details><br>
 
+```ruby
 harvest.user_create(user.id, options)
 
 ```
