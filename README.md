@@ -86,10 +86,10 @@ harvest.user
 
 ```ruby
 options = {
-  is_active: true,
-  updated_since: Date.today.prev_month,
-  page: 1,
-  per_page: 5
+  is_active: true, # boolean
+  updated_since: Date.today.prev_month, # datetime
+  page: 1, # integer
+  per_page: 5 # integer
 }
 ```
 </p></details><br>
@@ -110,12 +110,18 @@ harvest.user(user.id)
 
 #### Create
 
+<details><summary>Options</summary><p>
+
 ```ruby
 options = {
-  first_name: "Test", # REQUIRED
-  last_name: "User", # REQUIRED
-  email: "test.user@your-domain", # REQUIRED
+  first_name: "Test", # REQUIRED - string
+  last_name: "User", # REQUIRED - string
+  email: "test.user@your-domain", # REQUIRED - string
 }
+```
+</p></details><br>
+
+```ruby
 
 harvest.user_create(options)
 
@@ -148,12 +154,17 @@ harvest.user_project_assignments
 
 #### Project Assignments
 
+<details><summary>Options</summary><p>
+
 ```ruby
 options = {
-  page: 1,
-  per_page: 5
+  page: 1, # integer
+  per_page: 5 # integer
 }
+```
+</p></details><br>
 
+```ruby
 harvest.user_project_assignments(user.id, options)
 
 ```
@@ -166,13 +177,19 @@ Full parameter documentation can be found at
 
 #### List
 
+<details><summary>Options</summary><p>
+
 ```ruby
 options = {
-  is_active: true,
-  updated_since: Date.today.prev_month,
-  page: 1,
-  per_page: 5
+  is_active: true, # boolean
+  updated_since: Date.today.prev_month, # datetime
+  page: 1, # integer
+  per_page: 5 # integer
 }
+```
+</p></details><br>
+
+```ruby
 
 harvest.clients(options)
 
@@ -187,22 +204,32 @@ harvest.client(client.id)
 
 #### Create
 
+<details><summary>Options</summary><p>
+
 ```ruby
 options = {
-  name: "Test Client", # REQUIRED
+  name: "Test Client", # REQUIRED - string
 }
+```
+</p></details><br>
 
+```ruby
 harvest.client_create(options)
 
 ```
 
 #### Update
 
+<details><summary>Options</summary><p>
+
 ```ruby
 options = {
-  name: "Test Client Updated"
+  name: "Test Client Updated" # string
 }
+```
+</p></details><br>
 
+```ruby
 harvest.client_update(client.id, options)
 
 ```
@@ -221,13 +248,19 @@ Full parameter documentation can be found at
 
 #### List
 
+<details><summary>Options</summary><p>
+
 ```ruby
 options = {
-  is_active: true,
-  updated_since: Date.today.prev_month,
-  page: 1,
-  per_page: 5
+  is_active: true, # boolean
+  updated_since: Date.today.prev_month, # datetime
+  page: 1, # integer
+  per_page: 5 # integer
 }
+```
+</p></details><br>
+
+```ruby
 
 harvest.contacts(options)
 
